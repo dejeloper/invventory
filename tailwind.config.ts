@@ -1,46 +1,88 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
-        black: "#000",
-        white: "#fff",
-        title: "#312e81",
-        primary: "#8b5cf6",
-        primarySoft: "#8b5cf660",
-        primaryHard: "#7c3aed",
-        primaryText: "#fff",
-        secondary: "#6c757d",
-        secondaryHard: "#39424ac9",
-        secondarySoft: "#6c757d50",
-        secondaryText: "#fff",
-        success: "#1abc9c",
-        successHard: "#088f74",
-        successSoft: "#1abc9c60",
-        successText: "#fff",
-        danger: "#f1556c",
-        dangerHard: "#dc3545",
-        dangerSoft: "#df5562c9",
-        dangerText: "#fff",
-        info: "#03a9f4",
-        infoHard: "#0596d7",
-        infoSoft: "#55beede0",
-        infoText: "#fff",
-        warning: "#f7b84b",
-        warningHard: "#f5a822",
-        warningSoft: "#f7b84bba",
-        warningText: "#fff",
-        light: "#f8f9fa",
-        lightText: "#000",
-        dark: "#1e293b",
-        darkText: "#fff",
+        innblack: "#000",
+        innwhite: "#fff",
+        inntitle: "#312e81",
+        innprimary: "#8b5cf6",
+        innprimarySoft: "#8b5cf660",
+        innprimaryHard: "#7c3aed",
+        innprimaryText: "#fff",
+        innsecondary: "#6c757d",
+        innsecondaryHard: "#39424ac9",
+        innsecondarySoft: "#6c757d50",
+        innsecondaryText: "#fff",
+        innsuccess: "#1abc9c",
+        innsuccessHard: "#088f74",
+        innsuccessSoft: "#1abc9c60",
+        innsuccessText: "#fff",
+        inndanger: "#f1556c",
+        inndangerHard: "#dc3545",
+        inndangerSoft: "#df5562c9",
+        inndangerText: "#fff",
+        inninfo: "#03a9f4",
+        inninfoHard: "#0596d7",
+        inninfoSoft: "#55beede0",
+        inninfoText: "#fff",
+        innwarning: "#f7b84b",
+        innwarningHard: "#f5a822",
+        innwarningSoft: "#f7b84bba",
+        innwarningText: "#fff",
+        innlight: "#f8f9fa",
+        innlightText: "#000",
+        inndark: "#1e293b",
+        inndarkText: "#fff",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       boxShadow: {
         DEFAULT:
@@ -95,8 +137,28 @@ const config: Config = {
       zIndex: {
         60: "60",
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
 export default config;
