@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" translate="no">
+    <html lang="es" translate="no" suppressHydrationWarning>
       <body className={roboto.className}>
         <ThemeProvider
           attribute="class"
