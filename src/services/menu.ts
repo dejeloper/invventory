@@ -19,7 +19,7 @@ export interface MenuSidebarItems {
   url: string;
 }
 
-export const menuSidebar = [
+export const menuSidebar: MenuSidebar[] = [
   {
     pathname: "dashboard",
     name: "Tablero",
