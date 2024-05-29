@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LucideIcon } from "lucide-react";
 
 interface SidebarLinkGroupProps {
@@ -19,12 +22,14 @@ export function SidebarMenuIndividual({
   numberNotification = 0,
   colorNotification = "bg-indigo-500",
 }: SidebarLinkGroupProps) {
+  const currentPath = usePathname();
+
   return (
     <Link
       href={url}
       passHref
       className={`block text-slate-200 truncate transition duration-150 ${
-        pathname.includes(name) ? "hover:text-slate-200" : "hover:text-white"
+        currentPath.includes(url) ? "hover:text-slate-200" : "hover:text-white"
       }`}
     >
       <div className="flex items-center justify-between">
