@@ -3,6 +3,7 @@
 import { MenuSidebar } from "@/services/menu";
 import { SidebarMenuItems } from "./sidebar-menu-items";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface SidebarMenuProps {
   menuItems: MenuSidebar;
@@ -15,11 +16,11 @@ export function SidebarMenu({
   handleClick,
   open,
 }: SidebarMenuProps) {
-  const { pathname, name, icon: Icon, items } = menuItems;
+  const { name, icon: Icon, items } = menuItems;
+  const pathname = usePathname();
 
   const useSidebar = () => {
     const [sidebarExpanded, setSidebarExpanded] = useState(true);
-    const [location, setLocation] = useState("");
 
     useEffect(() => {
       const storedSidebarExpanded =
@@ -30,17 +31,12 @@ export function SidebarMenu({
       setSidebarExpanded(
         storedSidebarExpanded === null ? true : storedSidebarExpanded === "true"
       );
-
-      const currentLocation =
-        typeof window !== "undefined" && window.location.pathname === "/"
-          ? "dashboard/home"
-          : window.location.pathname;
-      setLocation(currentLocation);
     }, []);
 
-    return [sidebarExpanded, location];
+    return [sidebarExpanded];
   };
-  const [sidebarExpanded, location] = useSidebar();
+
+  const [sidebarExpanded] = useSidebar();
   const [storedSidebarExpanded, setStoredSidebarExpanded] =
     useState(sidebarExpanded);
 
@@ -49,18 +45,20 @@ export function SidebarMenu({
       <a
         href="#0"
         className={`block text-slate-200 truncate transition duration-150 ${
-          pathname.includes(name) ? "hover:text-slate-200" : "hover:text-white"
+          pathname.includes(menuItems.pathname)
+            ? "hover:text-slate-200"
+            : "hover:text-white"
         }`}
         onClick={(e) => {
-          if (sidebarExpanded === null)
+          if (sidebarExpanded === null) {
             localStorage.setItem("sidebar-expanded", "true");
+          }
           e.preventDefault();
           sidebarExpanded ? handleClick() : setStoredSidebarExpanded(true);
         }}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            {/* <i className={`${icon} ri-xl`} /> */}
             {Icon && <Icon size={20} />}
             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
               {name}
@@ -82,8 +80,7 @@ export function SidebarMenu({
         <ul className={`pl-9 mt-1 ${(!open && "hidden") || "block"}`}>
           {items &&
             items.map((item) => {
-              const menuIsActive =
-                typeof location === "string" && location.includes(item.url);
+              const menuIsActive = pathname.includes(item.url);
 
               return (
                 <SidebarMenuItems
