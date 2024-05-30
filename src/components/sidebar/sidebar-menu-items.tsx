@@ -27,7 +27,7 @@ export function SidebarMenuItems({
           <SheetClose asChild>
             <Button
               variant={"ghost"}
-              className="flex justify-start h-auto m-0 p-0 w-full hover:bg-transparent"
+              className="flex justify-start h-auto m-0 p-0 w-full hover:text-indigo-500"
             >
               <span className="text-sm font-medium duration-200">{name}</span>
             </Button>
