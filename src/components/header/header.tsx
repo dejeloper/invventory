@@ -1,18 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { HeaderToggleTheme } from "./";
 import { Button } from "../ui/button";
 
 export function Header() {
   return (
-    <header className="sticky top-0 bg-white border-b border-slate-200 dark:bg-slate-800 dark:border-slate-700 z-30  ">
-      <div className="px-4 sm:px-6">
+    <header className="sticky top-0 bg-card border-b border-slate-200 dark:bg-card dark:border-slate-700 z-30  ">
+      <div className="pr-4">
         <div className="flex items-center justify-between h-16 -mb-px">
           <div className="flex">
             <Button
               variant={"ghost"}
-              className="text-slate-500 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400 md:hidden"
+              className="w-16 h-16 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 md:hidden rounded-none"
             >
               <span className="sr-only">Open sidebar</span>
               <svg

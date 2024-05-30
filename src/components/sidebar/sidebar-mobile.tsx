@@ -21,7 +21,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
           <div className="flex">
             <Button
               variant={"ghost"}
-              className="w-16 h-16 text-white bg-red-800 border-b border-slate-200 dark:bg-slate-800 dark:border-slate-700 md:hidden  rounded-none"
+              className="w-16 h-16 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 md:hidden rounded-none"
             >
               <span className="sr-only">Open sidebar</span>
               <svg
@@ -38,7 +38,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
         </div>
       </SheetTrigger>
       <SheetContent side={"left"}>
-        <div className="flex justify-between mb-10 pr-3 sm:px-2">
+        <div className="flex justify-between mb-4 pr-3 sm:px-2">
           <Link href="/">
             <RiGhostLine className="w-8 h-8 text-white" />
           </Link>
@@ -46,7 +46,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
         <div className="space-y-8">
           <div>
             <h3 className="text-xs uppercase text-slate-500 font-semibold pl-3">
-              <span>Módulos</span>
+              <span>Menú</span>
             </h3>
 
             <ul className="mt-3">
