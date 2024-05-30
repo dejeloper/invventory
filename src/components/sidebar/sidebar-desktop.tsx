@@ -66,6 +66,7 @@ export function SidebarDesktop({ menuItems }: SidebarProps) {
                           menuItems={item}
                           handleClick={handleClick}
                           open={open}
+                          device={"desktop"}
                         />
                       );
                     }}

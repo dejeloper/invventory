@@ -1,12 +1,13 @@
 "use client";
 
 import { RiGhostLine } from "react-icons/ri";
-import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividual } from "./";
+import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividualSheet } from "./";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { MenuSidebar } from "@/services/menu";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {} from "./sidebar-menu-individual-sheet";
 
 interface SidebarProps {
   menuItems: MenuSidebar[];
@@ -63,7 +64,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
                       {(handleClick, open) => {
                         return (
                           <>
-                            <SidebarMenuIndividual
+                            <SidebarMenuIndividualSheet
                               key={item.name}
                               pathname={item.pathname}
                               name={item.name}
@@ -89,6 +90,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
                             menuItems={item}
                             handleClick={handleClick}
                             open={open}
+                            device={"mobile"}
                           />
                         );
                       }}

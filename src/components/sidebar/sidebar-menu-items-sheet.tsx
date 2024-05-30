@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { SheetClose } from "../ui/sheet";
 
 interface SidebarMenuItemsProps {
   name: string;
@@ -7,7 +8,7 @@ interface SidebarMenuItemsProps {
   isActive?: boolean;
 }
 
-export function SidebarMenuItems({
+export function SidebarMenuItemsSheet({
   name,
   url,
   isActive = false,
@@ -22,7 +23,14 @@ export function SidebarMenuItems({
           (isActive ? "text-indigo-500" : "text-slate-400 hover:text-slate-200")
         }
       >
-        <span className="text-sm font-medium duration-200">{name}</span>
+        <SheetClose asChild>
+          <Button
+            variant={"ghost"}
+            className="flex justify-start h-auto m-0 p-0 w-full hover:text-indigo-500"
+          >
+            <span className="text-sm font-medium duration-200">{name}</span>
+          </Button>
+        </SheetClose>
       </Link>
     </li>
   );

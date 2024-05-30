@@ -1,7 +1,7 @@
 "use client";
 
 import { MenuSidebar } from "@/services/menu";
-import { SidebarMenuItems } from "./sidebar-menu-items";
+import { SidebarMenuItems, SidebarMenuItemsSheet } from "./";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -9,12 +9,14 @@ interface SidebarMenuProps {
   menuItems: MenuSidebar;
   handleClick: () => void;
   open: boolean;
+  device?: string;
 }
 
 export function SidebarMenu({
   menuItems,
   handleClick,
   open,
+  device,
 }: SidebarMenuProps) {
   const { name, icon: Icon, items } = menuItems;
   const pathname = usePathname();
@@ -82,14 +84,25 @@ export function SidebarMenu({
             items.map((item) => {
               const menuIsActive = pathname.includes(item.url);
 
-              return (
-                <SidebarMenuItems
-                  key={item.name}
-                  name={item.name}
-                  url={item.url}
-                  isActive={menuIsActive}
-                />
-              );
+              if (device === "mobile") {
+                return (
+                  <SidebarMenuItemsSheet
+                    key={item.name}
+                    name={item.name}
+                    url={item.url}
+                    isActive={menuIsActive}
+                  />
+                );
+              } else {
+                return (
+                  <SidebarMenuItems
+                    key={item.name}
+                    name={item.name}
+                    url={item.url}
+                    isActive={menuIsActive}
+                  />
+                );
+              }
             })}
         </ul>
       </div>
