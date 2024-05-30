@@ -21,9 +21,7 @@ export function SidebarMenuItems({
           (isActive ? "text-indigo-500" : "text-slate-400 hover:text-slate-200")
         }
       >
-        <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-          {name}
-        </span>
+        <span className="text-sm font-medium duration-200">{name}</span>
       </Link>
     </li>
   );

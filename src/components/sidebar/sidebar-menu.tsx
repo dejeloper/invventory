@@ -60,7 +60,7 @@ export function SidebarMenu({
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             {Icon && <Icon size={20} />}
-            <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+            <span className="text-sm font-medium ml-3 duration-200">
               {name}
             </span>
           </div>
@@ -76,7 +76,7 @@ export function SidebarMenu({
           </div>
         </div>
       </a>
-      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+      <div className="block">
         <ul className={`pl-9 mt-1 ${(!open && "hidden") || "block"}`}>
           {items &&
             items.map((item) => {
