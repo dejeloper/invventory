@@ -46,10 +46,10 @@ export function SidebarMenu({
     <>
       <a
         href="#0"
-        className={`block text-slate-200 truncate transition duration-150 ${
+        className={`block text-foreground truncate transition duration-150 ${
           pathname.includes(menuItems.pathname)
-            ? "hover:text-slate-200"
-            : "hover:text-white"
+            ? "dark:hover:text-slate-200 hover:text-slate-700"
+            : "hover:text-foreground"
         }`}
         onClick={(e) => {
           if (sidebarExpanded === null) {

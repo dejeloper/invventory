@@ -19,7 +19,9 @@ export function SidebarMenuItems({
         passHref
         className={
           "block transition duration-150 truncate " +
-          (isActive ? "text-indigo-500" : "text-slate-400 hover:text-slate-200")
+          (isActive
+            ? "text-indigo-600 dark:text-indigo-500"
+            : "text-slate-400 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-200")
         }
       >
         <span className="text-sm font-medium duration-200">{name}</span>

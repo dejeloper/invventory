@@ -20,7 +20,9 @@ export function SidebarMenuItemsSheet({
         passHref
         className={
           "block transition duration-150 truncate " +
-          (isActive ? "text-indigo-500" : "text-slate-400 hover:text-slate-200")
+          (isActive
+            ? "text-indigo-500"
+            : "text-slate-400 hover:text-slate-600 dark:text-slate-800 dark:hover:text-slate-900")
         }
       >
         <SheetClose asChild>

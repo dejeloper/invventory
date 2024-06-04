@@ -22,7 +22,7 @@ export function SidebarMenuIndividual({
     <Link
       href={url}
       passHref
-      className={`block text-slate-200 truncate transition duration-150 ${
+      className={`block text-foreground truncate transition duration-150 ${
         currentPath.includes(url) ? "hover:text-slate-200" : "hover:text-white"
       }`}
     >
