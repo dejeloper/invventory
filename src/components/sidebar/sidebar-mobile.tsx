@@ -7,7 +7,6 @@ import { MenuSidebar } from "@/services/menu";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {} from "./sidebar-menu-individual-sheet";
 
 interface SidebarProps {
   menuItems: MenuSidebar[];
@@ -41,12 +40,12 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
       <SheetContent side={"left"}>
         <div className="flex justify-between mb-4 pr-3 sm:px-2">
           <Link href="/">
-            <RiGhostLine className="w-8 h-8 text-white" />
+            <RiGhostLine className="w-8 h-8" />
           </Link>
         </div>
         <div className="space-y-8">
           <div>
-            <h3 className="text-xs uppercase text-slate-500 font-semibold pl-3">
+            <h3 className="text-xs uppercase text-slate-800 dark:text-slate-200 font-semibold pl-3">
               <span>Menú</span>
             </h3>
 

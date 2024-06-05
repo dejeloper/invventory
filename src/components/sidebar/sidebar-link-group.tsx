@@ -19,7 +19,7 @@ export function SidebarLinkGroup({
 
   return (
     <li
-      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 dark:text-slate-200 text-slate-800 ${
         activecondition && "bg-slate-100 dark:bg-slate-800"
       }`}
     >

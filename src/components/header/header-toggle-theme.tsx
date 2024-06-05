@@ -22,14 +22,14 @@ export function HeaderToggleTheme() {
     <>
       {resolvedTheme === "dark" ? (
         <button
-          className="w-8 h-8 flex items-center justify-center bg-card hover:bg-slate-200 dark:bg-card dark:hover:bg-slate-500 transition duration-150 rounded-full"
+          className="w-8 h-8 flex items-center justify-center bg-card hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-500 transition duration-150 rounded-full"
           onClick={changeTheme}
         >
           <RiSunFill className="text-slate-500 dark:text-slate-200" />
         </button>
       ) : (
         <button
-          className="w-8 h-8 flex items-center justify-center bg-card hover:bg-slate-200 dark:bg-card dark:hover:bg-slate-500 transition duration-150 rounded-full"
+          className="w-8 h-8 flex items-center justify-center bg-card hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-500 transition duration-150 rounded-full"
           onClick={changeTheme}
         >
           <RiMoonFill className="text-slate-500 dark:text-slate-200" />

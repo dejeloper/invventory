@@ -29,7 +29,9 @@ export function SidebarMenuIndividual({
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           {Icon && <Icon size={20} />}
-          <span className="text-sm font-medium ml-3 duration-200">{name}</span>
+          <span className="text-sm font-medium ml-3 duration-200 dark:text-slate-200 text-slate-800">
+            {name}
+          </span>
         </div>
         <div className="flex flex-shrink-0 ml-2">
           {numberNotification != null &&

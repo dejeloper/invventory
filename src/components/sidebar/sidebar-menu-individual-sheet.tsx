@@ -25,19 +25,19 @@ export function SidebarMenuIndividualSheet({
     <Link
       href={url}
       passHref
-      className={`block text-slate-200 truncate transition duration-150 ${
+      className={`block dark:text-slate-200 text-slate-800 truncate transition duration-150 ${
         currentPath.includes(url) ? "hover:text-slate-200" : "hover:text-white"
       }`}
     >
       <SheetClose asChild>
         <Button
           variant={"ghost"}
-          className="flex justify-start h-auto m-0 p-0 w-full hover:bg-transparent"
+          className="flex justify-start h-auto m-0 p-0 w-full hover:bg-transparent dark:text-slate-200 text-slate-800"
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               {Icon && <Icon size={20} />}
-              <span className="text-sm font-medium ml-3 duration-200">
+              <span className="text-sm font-medium ml-3 duration-200 dark:text-slate-200 text-slate-800">
                 {name}
               </span>
             </div>
