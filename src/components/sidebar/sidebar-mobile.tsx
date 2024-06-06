@@ -21,7 +21,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
           <div className="flex">
             <Button
               variant={"ghost"}
-              className="w-16 h-16 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 md:hidden rounded-none"
+              className="w-16 h-16 text-slate-800 dark:text-slate-200 hover:text-slate-800 dark:hover:text-slate-200 border-b border-slate-200 dark:border-slate-700 md:hidden rounded-none"
             >
               <span className="sr-only">Open sidebar</span>
               <svg

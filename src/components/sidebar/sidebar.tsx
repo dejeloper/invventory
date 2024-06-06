@@ -4,11 +4,6 @@ import { MenuSidebar, menuSidebar } from "@/services/menu";
 import { SidebarDesktop, SidebarLogoWait, SidebarMobile } from "./";
 import { useEffect, useState } from "react";
 
-interface SidebarProps {
-  sidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 export function Sidebar() {
   const menuItems: MenuSidebar[] = menuSidebar;
   const [isClient, setIsClient] = useState(false);
