@@ -1,5 +1,7 @@
 import {
+  CircleUserRound,
   LayoutDashboard,
+  LogOut,
   LucideIcon,
   Mail,
   Settings,
@@ -58,5 +60,29 @@ export const menuSidebar: MenuSidebar[] = [
       { name: "Usuarios", url: "/settings/users" },
       { name: "Listas", url: "/settings/list" },
     ],
+  },
+];
+
+export interface MenuDrawer {
+  name: string;
+  icon: LucideIcon;
+  type: "link" | "button";
+  pathname?: string;
+  action?: () => void;
+}
+
+export const menuDrawer: MenuDrawer[] = [
+  { name: "Perfil", icon: CircleUserRound, type: "link", pathname: "/profile" },
+  {
+    name: "Configuraciones",
+    icon: Settings,
+    type: "link",
+    pathname: "/settings",
+  },
+  {
+    name: "Salir",
+    icon: LogOut,
+    type: "button",
+    action: () => console.log("Salir"),
   },
 ];
