@@ -3,20 +3,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RiGhostLine } from "react-icons/ri";
-import { MenuSidebar } from "@/services/menu";
-import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividualSheet } from "./";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { MenuDrawer, MenuSidebar } from "@/services/menu";
+import {
+  SidebarLinkGroup,
+  SidebarMenu,
+  SidebarMenuIndividualSheet,
+  SidebarMobileDrawer,
+} from "./";
 import { Button } from "@/components/ui/button";
-import { ButtonImagenCustoms } from "@/components/ui/custom/button-imagen";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { LogOut, MoreHorizontal, Settings } from "lucide-react";
 
 interface SidebarProps {
   menuItems: MenuSidebar[];
+  menuDrawer: MenuDrawer[];
 }
-export function SidebarMobile({ menuItems }: SidebarProps) {
+export function SidebarMobile({ menuItems, menuDrawer }: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -107,48 +109,7 @@ export function SidebarMobile({ menuItems }: SidebarProps) {
         </div>
         <div className="absolute w-full bottom-4 px-1 left-0">
           <Separator className="absolute -top-3 left-0 w-full" />
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button
-                variant={"ghost"}
-                className="w-full justify-start text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-slate-400"
-              >
-                <div className="flex justify-between items-center w-full">
-                  <div className=" flex gap-2">
-                    <Avatar className="h-5 w-5">
-                      <AvatarImage
-                        src="https://www.dejeloper.com/images/me_01.jpg"
-                        alt="avatar Perfil"
-                      />
-                      <AvatarFallback>Fullstack Developer</AvatarFallback>
-                    </Avatar>
-                    <span>Fullstack Developer</span>
-                  </div>
-                  <MoreHorizontal size={20} />
-                </div>
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="mb-2 p-2">
-              <div className="flex flex-col space-y-2 mt-2">
-                <Link href={"/"}>
-                  <ButtonImagenCustoms
-                    size={"sm"}
-                    icon={Settings}
-                    className="w-full text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-slate-400"
-                  >
-                    Configuraciones
-                  </ButtonImagenCustoms>
-                </Link>
-                <ButtonImagenCustoms
-                  size={"sm"}
-                  icon={LogOut}
-                  className="w-full text-slate-800 dark:text-slate-200 hover:text-slate-500 dark:hover:text-slate-400"
-                >
-                  Salir
-                </ButtonImagenCustoms>
-              </div>
-            </DrawerContent>
-          </Drawer>
+          <SidebarMobileDrawer menuDrawer={menuDrawer} />
         </div>
       </SheetContent>
     </Sheet>

@@ -6,5 +6,6 @@ export * from "./sidebar-menu-individual-sheet";
 export * from "./sidebar-menu-items";
 export * from "./sidebar-menu-items-sheet";
 export * from "./sidebar-mobile";
+export * from "./sidebar-mobile-drawer";
 export * from "./sidebar-desktop";
 export * from "./sidebar-logo-wait";
