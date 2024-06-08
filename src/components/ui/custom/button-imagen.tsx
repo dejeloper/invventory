@@ -2,8 +2,9 @@ import { cn } from "@/lib/utils";
 import { Button, ButtonProps } from "../button";
 import { LucideIcon } from "lucide-react";
 import { SheetClose } from "../sheet";
+import { DrawerClose } from "../drawer";
 
-interface ButtonImagenCustomsProps extends ButtonProps {
+export interface ButtonImagenCustomsProps extends ButtonProps {
   icon?: LucideIcon;
 }
 
@@ -25,10 +26,20 @@ export function ButtonImagenCustoms({
   );
 }
 
-export function ButtonImagenCustomsSheet(props: ButtonImagenCustomsProps) {
+export function ButtonImagenCustomsSheetClose(props: ButtonImagenCustomsProps) {
   return (
     <SheetClose asChild>
       <ButtonImagenCustoms {...props} />
     </SheetClose>
+  );
+}
+
+export function ButtonImagenCustomsDrawerClose(
+  props: ButtonImagenCustomsProps
+) {
+  return (
+    <DrawerClose asChild>
+      <ButtonImagenCustoms {...props} />
+    </DrawerClose>
   );
 }
