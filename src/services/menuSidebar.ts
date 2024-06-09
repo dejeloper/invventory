@@ -1,25 +1,5 @@
-import {
-  CircleUserRound,
-  LayoutDashboard,
-  LogOut,
-  LucideIcon,
-  Mail,
-  Settings,
-  ShoppingCart,
-} from "lucide-react";
-
-export interface MenuSidebar {
-  pathname: string;
-  name: string;
-  icon: LucideIcon;
-  items?: MenuSidebarItems[];
-  url?: string;
-}
-
-export interface MenuSidebarItems {
-  name: string;
-  url: string;
-}
+import { MenuSidebar } from "@/interfaces";
+import { LayoutDashboard, Mail, Settings, ShoppingCart } from "lucide-react";
 
 export const menuSidebar: MenuSidebar[] = [
   {
@@ -60,29 +40,5 @@ export const menuSidebar: MenuSidebar[] = [
       { name: "Usuarios", url: "/settings/users" },
       { name: "Listas", url: "/settings/list" },
     ],
-  },
-];
-
-export interface MenuDrawer {
-  name: string;
-  icon: LucideIcon;
-  type: "link" | "button";
-  pathname?: string;
-  action?: () => void;
-}
-
-export const menuDrawer: MenuDrawer[] = [
-  { name: "Perfil", icon: CircleUserRound, type: "link", pathname: "/profile" },
-  {
-    name: "Configuraciones",
-    icon: Settings,
-    type: "link",
-    pathname: "/settings",
-  },
-  {
-    name: "Salir",
-    icon: LogOut,
-    type: "button",
-    action: () => console.log("Salir"),
   },
 ];

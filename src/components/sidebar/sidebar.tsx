@@ -1,13 +1,10 @@
 "use client";
 
-import {
-  MenuDrawer,
-  MenuSidebar,
-  menuDrawer,
-  menuSidebar,
-} from "@/services/menu";
+import { MenuDrawer, MenuSidebar } from "@/interfaces";
 import { SidebarDesktop, SidebarLogoWait, SidebarMobile } from "./";
 import { useEffect, useState } from "react";
+import { menuSidebar } from "@/services/menuSidebar";
+import { menuDrawer } from "@/services/menuDrawer";
 
 export function Sidebar() {
   const menuItems: MenuSidebar[] = menuSidebar;
