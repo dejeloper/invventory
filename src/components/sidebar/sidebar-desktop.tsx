@@ -1,10 +1,10 @@
 "use client";
 
-import { MenuSidebar } from "@/services/menu";
-import { RiGhostLine } from "react-icons/ri";
-import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividual } from "./";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { MenuSidebar } from "@/interfaces";
+import { SidebarLinkGroup, SidebarMenu, SidebarMenuIndividual } from "./";
+import { RiGhostLine } from "react-icons/ri";
 
 interface SidebarProps {
   menuItems: MenuSidebar[];
