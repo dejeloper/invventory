@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  ButtonImagenCustoms,
+  ButtonImagenCustomsDrawerClose,
   type ButtonImagenCustomsProps,
 } from "./button-imagen";
 
@@ -17,9 +17,13 @@ export function LinkImageCustom({
 }: LinkImageCustomProps) {
   return (
     <Link href={href}>
-      <ButtonImagenCustoms icon={icon} className={className} {...props}>
+      <ButtonImagenCustomsDrawerClose
+        icon={icon}
+        className={className}
+        {...props}
+      >
         {children}
-      </ButtonImagenCustoms>
+      </ButtonImagenCustomsDrawerClose>
     </Link>
   );
 }
