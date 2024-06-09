@@ -1,9 +1,9 @@
 "use client";
 
-import { MenuSidebar } from "@/services/menu";
-import { SidebarMenuItems, SidebarMenuItemsSheet } from "./";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { MenuSidebar } from "@/interfaces";
+import { SidebarMenuItems, SidebarMenuItemsSheet } from "./";
 
 interface SidebarMenuProps {
   menuItems: MenuSidebar;
