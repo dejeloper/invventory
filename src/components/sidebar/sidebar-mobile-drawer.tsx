@@ -1,4 +1,5 @@
-import { MenuDrawer } from "@/services/menu";
+import { MenuUser } from "@/interfaces";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ButtonImagenCustomsDrawerClose } from "@/components/ui/custom/button-imagen";
@@ -7,10 +8,10 @@ import { LinkImageCustom } from "@/components/ui/custom/link-image";
 import { MoreHorizontal } from "lucide-react";
 
 interface SidebarProps {
-  menuDrawer: MenuDrawer[];
+  menuUser: MenuUser[];
 }
 
-export function SidebarMobileDrawer({ menuDrawer }: SidebarProps) {
+export function SidebarMobileDrawer({ menuUser }: SidebarProps) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -35,7 +36,7 @@ export function SidebarMobileDrawer({ menuDrawer }: SidebarProps) {
       </DrawerTrigger>
       <DrawerContent className="mb-2 p-2">
         <div className="flex flex-col space-y-2 mt-2">
-          {menuDrawer.map((item, index) => {
+          {menuUser.map((item, index) => {
             if (item.type === "link") {
               return (
                 <LinkImageCustom

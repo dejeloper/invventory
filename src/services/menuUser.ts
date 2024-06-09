@@ -1,7 +1,7 @@
-import { MenuDrawer } from "@/interfaces";
+import { MenuUser } from "@/interfaces";
 import { CircleUserRound, LogOut, Settings } from "lucide-react";
 
-export const menuDrawer: MenuDrawer[] = [
+export const menuUser: MenuUser[] = [
   { name: "Perfil", icon: CircleUserRound, type: "link", pathname: "/profile" },
   {
     name: "Configuraciones",

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RiGhostLine } from "react-icons/ri";
-import { MenuDrawer, MenuSidebar } from "@/services/menu";
 import {
   SidebarLinkGroup,
   SidebarMenu,
@@ -13,12 +12,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import { MenuSidebar, MenuUser } from "@/interfaces";
 
 interface SidebarProps {
   menuItems: MenuSidebar[];
-  menuDrawer: MenuDrawer[];
+  menuUser: MenuUser[];
 }
-export function SidebarMobile({ menuItems, menuDrawer }: SidebarProps) {
+export function SidebarMobile({ menuItems, menuUser }: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -109,7 +109,7 @@ export function SidebarMobile({ menuItems, menuDrawer }: SidebarProps) {
         </div>
         <div className="absolute w-full bottom-4 px-1 left-0">
           <Separator className="absolute -top-3 left-0 w-full" />
-          <SidebarMobileDrawer menuDrawer={menuDrawer} />
+          <SidebarMobileDrawer menuUser={menuUser} />
         </div>
       </SheetContent>
     </Sheet>

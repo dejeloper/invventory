@@ -1,14 +1,14 @@
 "use client";
 
-import { MenuDrawer, MenuSidebar } from "@/interfaces";
+import { MenuUser, MenuSidebar } from "@/interfaces";
 import { SidebarDesktop, SidebarLogoWait, SidebarMobile } from "./";
 import { useEffect, useState } from "react";
 import { menuSidebar } from "@/services/menuSidebar";
-import { menuDrawer } from "@/services/menuDrawer";
+import { menuUser } from "@/services/menuUser";
 
 export function Sidebar() {
   const menuItems: MenuSidebar[] = menuSidebar;
-  const menuDrawerItems: MenuDrawer[] = menuDrawer;
+  const menuUserItems: MenuUser[] = menuUser;
   const [isClient, setIsClient] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -33,6 +33,6 @@ export function Sidebar() {
   return isDesktop ? (
     <SidebarDesktop menuItems={menuItems} />
   ) : (
-    <SidebarMobile menuItems={menuItems} menuDrawer={menuDrawerItems} />
+    <SidebarMobile menuItems={menuItems} menuUser={menuUserItems} />
   );
 }

@@ -13,7 +13,7 @@ export interface MenuSidebarItems {
   url: string;
 }
 
-export interface MenuDrawer {
+export interface MenuUser {
   name: string;
   icon: LucideIcon;
   type: "link" | "button";
